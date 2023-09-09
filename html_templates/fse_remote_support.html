@@ -1,0 +1,1042 @@
+<link rel="stylesheet" href="stylesheets/questionnaire_styles.css">
+
+<div class = 'form_header'>
+    <h2>COP/Engineering Data Submission</h2>
+    <h3> To be filled out for COP data to be processed and reviewed. </h3>
+</div>
+
+    <div class = 'question_card'>
+      <div class = 'question_answer'>
+
+        <h5>Project Name</h5>
+        <input type = 'text' class = 'question_input' id="project_name_phase" readonly><br>
+
+        <h5>Quote #</h5>
+        <input type = 'text' class = 'question_input' id="fse_quote" readonly>
+
+        <h5>FSE Service Requested</h5>
+        <input type = 'text' class = 'question_input' id="fse_service_requested" readonly>
+
+        <h5>Notes</h5>
+        <textarea type = 'text' class = 'question_textarea' id="fse_service_notes"></textarea>
+      </div>
+    </div>
+
+    <div class = 'question_card'>
+      <div class = 'question_title'>
+        Type of Request
+      </div>
+      <div class = 'question_answer'>
+
+        <br><input type="radio" id="new_request" name="type_of_request" checked>
+        <label for="new_request">New Request</label> 
+
+        <br><input type="radio" id="resubmission" name="type_of_request" >
+        <label for="resubmission">Re-Submission</label> 
+
+        <br><input type="radio" id="continuation" name="type_of_request" >
+        <label for="continuation">Continuation</label> 
+      </div>
+    </div>
+
+    <div class = 'question_card'>
+      <div class = 'question_title bolded' >
+      Individuals and/or email addresses involved
+      </div>
+      <div class = 'question_answer'>
+        <br><textarea type = 'text' class = 'question_textarea' id="individuals_involved"></textarea>
+      </div>
+    </div>
+
+    <div class = 'question_card'>
+      <div class = 'question_title bolded' >
+      Pre-test Data or Post-Install Data?
+      </div>
+      <div class = 'question_answer'>
+      
+        <br><input type="radio" id="Pre" name="preTest_postInstall_data" >
+        <label for="Pre">Pre-test data/not final/benchmark</label> 
+
+        <br><input type="radio" id="Post" name="preTest_postInstall_data" >
+        <label for="Post">Post-Installation Data</label> 
+
+        <br><input type="radio"  id="pp_other" name="preTest_postInstall_data" > 
+        <label for="pp_other">Other</label> 
+        <input type="text" id="pp_other_text" class = 'question_input'>
+
+      </div>
+    </div>
+
+    <div class = 'question_card'>
+      <div class = 'question_title'>
+      What Carrier is the project for? (check all that apply)
+      </div>
+      <div class = 'question_answer' id = 'carrier'>
+
+        <br><input type="checkbox" id="ATT" value = 'ATT' >
+        <label for="ATT">ATT</label> 
+
+        <br><input type="checkbox" id="T_Mobile" value = 'T-Mobile'>
+        <label for="T_Mobile">T-Mobile</label>
+
+        <br><input type="checkbox" id="US_Cellular" value = 'US Cellular'>
+        <label for="US_Cellular">US Cellular</label> 
+
+        <br><input type="checkbox" id="Verizon" value = 'Verizon'>
+        <label for="Verizon">Verizon</label>
+
+        <br><input type="checkbox" id="Public_Safety" value = 'Public Safety'>
+        <label for="Public_Safety">Public Safety</label>
+
+        <br><input type="checkbox" id="Private" value = 'Private'>
+        <label for="Private">Private LTE / CBRS</label> 
+        
+        <br><input type="checkbox" id="WiFi" value = 'WiFi'>
+        <label for="WiFi">WiFi</label> 
+
+        <br><input type="checkbox" id="carrier_other" value = 'Other'>
+        <label for="carrier_other">Other</label>
+        <input type="text" id="carrier_other_text" class = 'question_input'>
+      </div>
+    </div>
+
+    <h2 class = 'form_sub_header'>Did this job have Sweep/PIM testing performed?</h2>
+
+    <div class = 'question_card'>
+      <div class = 'question_title bolded' >
+      Sweep/PIM Results
+      </div>
+      <div class = 'question_answer'>
+      
+        <br><input type="radio" id="sweep_pim_yes" name="sweep_pim_results" onclick="show_hide_divs_handler()"> 
+        <label for="sweep_pim_yes">Yes</label>
+
+        <br><input type="radio" id="sweep_pim_no" name="sweep_pim_results" onclick="show_hide_divs_handler()">
+        <label for="sweep_pim_no">No</label>
+
+      </div>
+    </div>
+
+    <div id = "sweep_pim" style = "display: none">
+    <h2 class = 'form_sub_header'>Sweep/PIM</h2>
+
+    <div class = 'question_card'>
+      <div class = 'question_title'>
+      How many cables (segment and system) were tested?
+      </div>
+      <div class = 'question_answer'>
+        <br><input type = 'text' class = 'question_input' id="pim_cables_count">
+      </div>
+    </div>
+
+    <div class = 'question_card'>
+      <div class = 'question_title'>
+      Test Setup
+      </div>
+      <div class = 'question_answer' id="test_setup">
+
+        <br><input type="checkbox" id="System" >
+        <label for="System">System</label>
+
+        <br><input type="checkbox" id="Segment" >
+        <label for="Segment">Segment</label> 
+      </div>
+    </div>
+
+    <div class = 'question_card'>
+      <div class = 'question_title'>
+      Sweep Frequencies Tested
+      </div>
+      <div class = 'question_answer' id="sweep_freq_tested">
+
+        <br><input type="checkbox" id="600" >
+        <label for="600">600</label> 
+
+        <br><input type="checkbox" id="700" >
+        <label for="700">700</label>
+
+        <br><input type="checkbox" id="800" >
+        <label for="800">800</label> 
+
+        <br><input type="checkbox" id="850" >
+        <label for="850">850</label>
+
+        <br><input type="checkbox" id="1900" >
+        <label for="1900">1900</label> 
+
+        <br><input type="checkbox" id="2100" >
+        <label for="2100">2100</label> 
+        
+        <br><input type="checkbox" id="2300" >
+        <label for="2300">2300</label>
+
+        <br><input type="checkbox" id="2500" >
+        <label for="2500">2500</label> 
+
+        <br><input type="checkbox" id="3600" >
+        <label for="3600">3600 (CBRS)</label>
+
+        <br><input type="checkbox" id="3700" >
+        <label for="3700">3700 (C-Band)</label> 
+
+        <br><input type="checkbox" id="GPS" >
+        <label for="GPS">GPS</label>
+      </div>
+    </div>
+
+    <div class = 'question_card'>
+      <div class = 'question_title'>
+      Sweep Test Setup?
+      </div>
+      <div class = 'question_answer' id="sweep_test_setup">
+
+        <br><input type="checkbox" id="to_load" >
+        <label for="to_load">To Load</label> 
+
+        <br><input type="checkbox" id="to_short" >
+        <label for="to_short">To short</label>
+
+        <br><input type="checkbox" id="to_antenna" >
+        <label for="to_antenna">To antenna</label> 
+      </div>
+    </div>
+
+    <div class = 'question_card'>
+      <div class = 'question_title' >
+        RL and DTF Pass/Fail Criteria if different than PW Standards.<br>
+        PW Standards: RL -20 Segment/Load, -14 System/Ant | DTF -26 Segment/Load, -14 System/Ant
+      </div>
+      <div class = 'question_answer'>
+      
+        <br><input type="radio" id="pw_standard_rl_df" name="rl_dtf_pass_fail" >
+        <label for="pw_standard_rl_df">PW Standard</label> 
+
+        <br><input type="radio"  id="rl_dtf_pass_fail_other" name="rl_dtf_pass_fail" > 
+        <label for="rl_dtf_pass_fail_other">Other</label> 
+        <input type="text" id="rl_dtf_pass_fail_other_text" class = 'question_input'>
+
+      </div>
+    </div>
+
+    <div class = 'question_card'>
+      <div class = 'question_title'>
+      PIM Frequencies Tested
+      </div>
+      <div class = 'question_answer' id="pim_freq_tested">
+
+        <br><input type="checkbox" id="p_700" >
+        <label for="p_700">700</label> 
+
+        <br><input type="checkbox" id="p_800" >
+        <label for="p_800">800</label>
+
+        <br><input type="checkbox" id="p_850" >
+        <label for="p_850">850</label> 
+
+        <br><input type="checkbox" id="p_1900" >
+        <label for="p_1900">1900</label>
+
+        <br><input type="checkbox" id="p_2100" >
+        <label for="p_2100">2100</label>
+
+        <br><input type="checkbox" id="p_2500" >
+        <label for="p_2500">2500</label> 
+
+        <br><input type="checkbox" id="p_3700" >
+        <label for="p_3700">3700 (C-Band)</label> 
+
+        <br><input type="checkbox" id="p_GPS" >
+        <label for="p_GPS">PIM not performed</label> 
+      </div>
+    </div>
+
+    <div class = 'question_card'>
+      <div class = 'question_title'>
+      PIM Test Setup?
+      </div>
+      <div class = 'question_answer' id="pim_test_setup">
+
+        <br><input type="checkbox" id="p_load" >
+        <label for="p_load">Load</label> 
+
+        <br><input type="checkbox" id="p_antenna" >
+        <label for="p_antenna">Antenna</label>
+
+        <br><input type="checkbox" id="p_pim_not" >
+        <label for="p_pim_not">PIM not performed</label> 
+      </div>
+    </div>
+
+    <div class = 'question_card'>
+      <div class = 'question_title' >
+        PIM Pass/Fail Criteria if different than PW Standards.<br>
+        PW Standards: -153dBc Segment/Load, -143dBc System/Ant
+      </div>
+      <div class = 'question_answer'>
+      
+        <br><input type="radio" id="pw_standard_pim" name="pim_pass_fail" >
+        <label for="pw_standard_pim">PW Standard</label> 
+
+        <br><input type="radio" id="no_pim" name="pim_pass_fail" >
+        <label for="no_pim">PW Standard</label> 
+
+        <br><input type="radio"  id="pim_pass_fail_other" name="pim_pass_fail" > 
+        <label for="pim_pass_fail_other">Other</label> 
+        <input type="text" id="pim_pass_fail_other_text" class = 'question_input'>
+
+      </div>
+    </div>
+
+    <div class = 'question_card'>
+      <div class = 'question_title bolded' >
+      Where are the files located?
+      </div>
+      <div class = 'question_answer'>
+
+        <br><input type="radio" id="p_google_drive" name="pim_sweep_file_location" >
+        <label for="p_google_drive">Google Drive</label>
+
+        <br><input type="radio"  id="p_email" name="pim_sweep_file_location" >  
+        <label for="p_email">Email (Last Resort)</label> 
+
+      </div>
+    </div>
+    </div>
+
+    <h2 class = 'form_sub_header'>Does this job have CAT cable testing performed?</h2>
+
+<div class = 'question_card'>
+  <div class = 'question_title bolded' >
+  CAT Cable Results
+  </div>
+  <div class = 'question_answer'>
+  
+    <br><input type="radio" id="CAT_cables_yes" name="cat_cable_results" onclick="show_hide_divs_handler()"> 
+    <label for="CAT_cables_yes">Yes</label>
+
+    <br><input type="radio" id="CAT_cables_no" name="cat_cable_results" onclick="show_hide_divs_handler()">
+    <label for="CAT_cables_no">No</label>
+
+  </div>
+</div>
+
+<div id = "CAT_Testing" style = "display: none">
+<h2 class = 'form_sub_header'>CAT Testing</h2>
+
+<div class = 'question_card'>
+  <div class = 'question_title'>
+  Number of cables?
+  </div>
+  <div class = 'question_answer'>
+    <br><input type = 'text' class = 'question_input' id="cat_cables_count">
+  </div>
+</div>
+
+<div class = 'question_card'>
+  <div class = 'question_title bolded' >
+  Cable classification
+  </div>
+  <div class = 'question_answer'>
+  
+    <br><input type="radio" id="CAT_5e" name="cable_classification" >
+    <label for="CAT_5e">CAT 5e</label>
+
+    <br><input type="radio" id="CAT_6" name="cable_classification" >
+    <label for="CAT_6">CAT 6</label>
+
+    <br><input type="radio"  id="CAT_6A" name="cable_classification" >  
+    <label for="CAT_6A">CAT 6A</label> 
+
+    <br><input type="radio"  id="CAT_7" name="cable_classification" >  
+    <label for="CAT_7">CAT 7</label> 
+
+    <br><input type="radio"  id="c_other" name="cable_classification" > 
+        <label for="c_other">Other</label> 
+        <input type="text" id="c_other_text" class = 'question_input'>
+  </div>
+</div>
+
+<div class = 'question_card'>
+  <div class = 'question_title'>
+  Cable construction type
+  </div>
+  <div class = 'question_answer' id="cable_construction_type">
+
+    <br><input type="checkbox" id="U_UTP" >
+    <label for="U_UTP">U/UTP (Unshielded Bundle, Unshielded Twisted Pairs)</label>
+
+    <br><input type="checkbox" id="U_FTP" >
+    <label for="U_FTP">U/FTP (Unshielded Bundle, Shielded Twisted Pairs)</label> 
+
+    <br><input type="checkbox" id="F_UTP" >
+    <label for="F_UTP">F/UTP (Shielded Bundle, Unshielded Twisted Pairs)</label> 
+
+    <br><input type="checkbox" id="S_FTP" >
+    <label for="S_FTP">S/FTP (Shielded Bundle, Shielded Twisted Pairs)</label>
+
+    <br><input type="checkbox"  id="cc_other" name="data" > 
+        <label for="cc_other">Other</label> 
+        <input type="text" id="cc_other_text" class = 'question_input'>
+  </div>
+</div>
+
+<div class = 'question_card'>
+  <div class = 'question_title'>
+  Termination Type
+  </div>
+  <div class = 'question_answer' id="termination_type">
+
+    <br><input type="checkbox" id="KeystoneJack_TerminationBlock" >
+    <label for="KeystoneJack_TerminationBlock">Keystone Jack/Termination Block</label> 
+
+    <br><input type="checkbox" id="RJ45" >
+    <label for="RJ45">RJ45</label>
+
+    <br><input type="checkbox"  id="term_other" > 
+        <label for="term_other">Other</label> 
+        <input type="text" id="term_other_text" class = 'question_input'>
+  </div>
+</div>
+
+<div class = 'question_card'>
+  <div class = 'question_title bolded' >
+  Where are the files located?
+  </div>
+  <div class = 'question_answer'>
+
+    <br><input type="radio" id="c_google_drive" name="cat_file_location" >
+    <label for="c_google_drive">Google Drive</label>
+
+    <br><input type="radio"  id="c_email" name="cat_file_location" >  
+    <label for="c_email">Email (Last Resort)</label> 
+
+  </div>
+</div>
+</div>
+
+<h2 class = 'form_sub_header'>Does this job have OTDR/Scope testing performed?</h2>
+
+<div class = 'question_card'>
+  <div class = 'question_title bolded' >
+  OTDR/Scopes Results
+  </div>
+  <div class = 'question_answer'>
+  
+    <br><input type="radio" id="OTDR_scopes_yes" name="otdr_scopes_results" onclick="show_hide_divs_handler()"> 
+    <label for="OTDR_scopes_yes">Yes</label>
+
+    <br><input type="radio" id="OTDR_scopes_no" name="otdr_scopes_results" onclick="show_hide_divs_handler()">
+    <label for="OTDR_scopes_no">No</label>
+
+  </div>
+</div>
+
+<div id = "OTDR_Scopes" style = "display: none">
+<h2 class = 'form_sub_header'>OTDR/Scopes</h2>
+
+<div class = 'question_card'>
+  <div class = 'question_title'>
+  How many fiber strands for OTDR? If no OTDR, put N/A.
+  </div>
+  <div class = 'question_answer'>
+    <br><input type = 'text' class = 'question_input' id="otdr_fiber_strand_count">
+  </div>
+</div>
+
+<div class = 'question_card'>
+  <div class = 'question_title bolded' >
+  Bidirectional OTDR testing?
+  </div>
+  <div class = 'question_answer'>
+  
+    <br><input type="radio" id="Bidirectional_OTDR_yes" name="bidirectional_otdr_testing" >
+    <label for="Bidirectional_OTDR_yes">Yes</label>
+
+    <br><input type="radio" id="Bidirectional_OTDR_no" name="bidirectional_otdr_testing" >
+    <label for="Bidirectional_OTDR_no">No</label>
+
+    <br><input type="radio"  id="Bidirectional_OTDR_no_OTDR" name="bidirectional_otdr_testing" >  
+    <label for="Bidirectional_OTDR_no_OTDR">No OTDR</label> 
+    </div>
+  </div>
+
+  <div class = 'question_card'>
+  <div class = 'question_title'>
+  Launch boxes info. Head length, tail length, and/or none. If no OTDR, put N/A.
+<br>ex. "Head and tail both 150 m"
+  </div>
+  <div class = 'question_answer'>
+    <br><input type = 'text' class = 'question_input' id="otdr_boxes_info">
+  </div>
+</div>
+
+<div class = 'question_card'>
+  <div class = 'question_title'>
+  OTDR Setup Info. Connector type (SC-APC/LC-UPC), splices, approx. length if known, etc. If no OTDR, put N/A.
+<br>ex. "SC-APC, 2 splice points, ~300m"
+  </div>
+  <div class = 'question_answer'>
+    <br><input type = 'text' class = 'question_input' id="otdr_setup_info">
+  </div>
+</div>
+
+<div class = 'question_card'>
+  <div class = 'question_title bolded' >
+  Scopes?
+  </div>
+  <div class = 'question_answer'>
+  
+    <br><input type="radio" id="Scopes_yes" name="scopes" >
+    <label for="Scopes_yes">Yes</label>
+
+    <br><input type="radio" id="Scopes_no" name="scopes" >
+    <label for="Scopes_no">No</label>
+    </div>
+  </div>
+
+  <div class = 'question_card'>
+  <div class = 'question_title'>
+  How many fiber endfaces scoped? If no scopes, put N/A.
+  </div>
+  <div class = 'question_answer'>
+    <br><input type = 'text' class = 'question_input' id="fiber_endfaces_scoped_count">
+  </div>
+</div>
+
+<div class = 'question_card'>
+  <div class = 'question_title bolded' >
+  Where are the files located?
+  </div>
+  <div class = 'question_answer'>
+
+    <br><input type="radio" id="o_s_google_drive" name="otdr_scopes_file_location" >
+    <label for="o_s_google_drive">Google Drive</label>
+
+    <br><input type="radio"  id="o_s_email" name="otdr_scopes_file_location" >  
+    <label for="o_s_email">Email (Last Resort)</label> 
+
+  </div>
+</div>
+</div>
+
+<h2 class = 'form_sub_header'>Does this job have WINd/Scanner testing performed?</h2>
+
+<div class = 'question_card'>
+  <div class = 'question_title bolded' >
+  WINd Walk/PS Grid Testing Results
+  </div>
+  <div class = 'question_answer'>
+  
+    <br><input type="radio" id="WINd_Scanner_yes" name="wind_scanner_results" onclick="show_hide_divs_handler()"> 
+    <label for="WINd_Scanner_yes">Yes</label>
+
+    <br><input type="radio" id="WINd_Scanner_no" name="wind_scanner_results" onclick="show_hide_divs_handler()">
+    <label for="WINd_Scanner_no">No</label>
+
+    <br><input type="radio" id="WINd_Scanner_notify" name="wind_scanner_results" onclick="show_hide_divs_handler()">
+    <label for="WINd_Scanner_notify">Notifying of upcoming walk</label>
+  </div>
+</div>
+
+<div id = "walk_date_div" style = "display: none">
+  <div class = 'question_card' id = 'WINd_Scanner_notify_div'>
+    <div class = 'question_title bolded' >
+    When will walking begin?
+    </div>
+    <div class = 'question_answer'>
+      <input type="date" id="wind_scanner_date" name="wind_scanner_date"> 
+    </div>
+  </div>
+</div>
+
+<div id = "WINd_Public_Safety_Walks" style = "display: none">
+  <h2 class = 'form_sub_header'>WINd/Public Safety Walks</h2>
+
+  <div class = 'question_card'>
+    <div class = 'question_title'>
+    Walk Type
+    <br>Check all that apply
+    </div>
+    <div class = 'question_answer' id="walk_type">
+
+      <br><input type="checkbox" id="UE_WINd_Walk" >
+      <label for="UE_WINd_Walk">UE WINd Walk</label>
+
+      <br><input type="checkbox" id="TopN_Scanner" >
+      <label for="TopN_Scanner">TopN Scanner</label> 
+
+      <br><input type="checkbox" id="CW_Scanner" >
+      <label for="CW_Scanner">CW Scanner</label> 
+
+      <br><input type="checkbox" id="Public_Safety_Grid_Testing_Scanner" >
+      <label for="Public_Safety_Grid_Testing_Scanner">Public Safety Grid Testing Scanner</label>
+    </div>
+  </div>
+
+  <div class = 'question_card'>
+    <div class = 'question_title bolded' >
+    A walk tracker and analysis of the KPI data will be completed and shared.
+    </div>
+    <div class = 'question_answer'>
+    
+      <br><input type="radio" id="kpi_data" name="kpi_data" >
+      <label for="myCheck">Walk tracker making sure all floors and technologies are accounted for AND quick analysis of KPI data.</label>
+
+      <br><input type="radio"  id="kpi_other" name="kpi_data" > 
+          <label for="kpi_other">Other</label> 
+          <input type="text" id="kpi_other_text" class = 'question_input'>
+    </div>
+  </div>
+
+  <div class = 'question_card'>
+    <div class = 'question_title bolded' >
+    Is an executive summary report required?
+      </div>
+      <div class = 'question_answer'>
+      
+        <br><input type="radio" id="executive_summary_yes" name="exec_summary_report_opt"> 
+        <label for="executive_summary_yes">Yes</label>
+
+        <br><input type="radio" id="executive_summary_no" name="exec_summary_report_opt">
+        <label for="executive_summary_no">No</label>
+
+      </div>
+    </div>
+
+  <div class = 'question_card'>
+    <div class = 'question_title'>
+    How many floors?
+    </div>
+    <div class = 'question_answer'>
+      <br><input type = 'text' class = 'question_input' id="floors_count">
+    </div>
+  </div>
+
+  <div class = 'question_card'>
+    <div class = 'question_title'>
+    Total number of files uploaded
+    </div>
+    <div class = 'question_answer'>
+      <br><input type = 'text' class = 'question_input' id="files_uploaded_count">
+    </div>
+  </div>
+
+  <div class = 'question_card'>
+    <div class = 'question_title'>
+    If multiple parts need to be merged please section them out here ie "1st Floor 3 parts (same floor plan)"
+    </div>
+    <div class = 'question_answer' id="merge_floor_plans">
+
+      <br><input type="checkbox" id="file_merge">
+      <label for="file_merge">No files that need to be merged at this time</label>
+
+      <br><input type="checkbox"  id="merge_other"> 
+          <label for="merge_other">Other</label> 
+          <input type="text" id="merge_other_text" class = 'question_input'>
+    </div>
+  </div>
+
+  <div class = 'question_card'>
+    <div class = 'question_title'>
+    Carriers walked
+    </div>
+    <div class = 'question_answer' id="carriers_walked">
+
+      <br><input type="checkbox" id="carrier_ATT" >
+      <label for="carrier_ATT">ATT</label> 
+
+      <br><input type="checkbox" id="carrier_T_Mobile" >
+      <label for="carrier_T_Mobile">T-Mobile</label>
+
+      <br><input type="checkbox" id="carrier_US_Cellular" >
+      <label for="carrier_US_Cellular">US Cellular</label>
+
+      <br><input type="checkbox" id="carrier_Verizon" >
+      <label for="carrier_Verizon">Verizon</label>
+
+      <br><input type="checkbox" id="carrier_Public_Safety" >
+      <label for="carrier_Public_Safety">Public Safety</label>
+
+      <br><input type="checkbox" id="carrier_Private_LTE_5G" >
+      <label for="carrier_Private_LTE_5G">Private LTE or 5G</label>
+    </div>
+  </div>
+
+  <div class = 'question_card'>
+    <div class = 'question_title'>
+    ATT technologies and frequencies tested
+    </div>
+    <div class = 'question_answer' id="att_tech_freq_tested">
+
+      <br><input type="checkbox" id="not_walking" >
+      <label for="not_walking">NOT WALKING</label> 
+
+      <br><input type="checkbox" id="unlocked_ue" >
+      <label for="unlocked_ue">UNLOCKED UE</label>
+
+      <br><input type="checkbox" id="850_UMTS" >
+      <label for="850_UMTS">850 UMTS</label>
+
+      <br><input type="checkbox" id="1900_UMTS" >
+      <label for="1900_UMTS">1900 UMTS</label>
+
+      <br><input type="checkbox" id="700_LTE_B17_B12" >
+      <label for="700_LTE_B17_B12">700 LTE B17/B12</label>
+
+      <br><input type="checkbox" id="700_LTE_FirstNet_B14" >
+      <label for="700_LTE_FirstNet_B14">700 LTE FirstNet B14</label>
+
+      <br><input type="checkbox" id="850_LTE" >
+      <label for="850_LTE">850 LTE</label>
+
+      <br><input type="checkbox" id="1900_LTE" >
+      <label for="1900_LTE">1900 LTE</label>
+
+      <br><input type="checkbox" id="2100_LTE" >
+      <label for="2100_LTE">2100 LTE</label>
+
+      <br><input type="checkbox" id="2300_LTE" >
+      <label for="2300_LTE">2300 LTE</label>
+
+      <br><input type="checkbox" id="3600_LTE_CBRS" >
+      <label for="3600_LTE_CBRS">3600 LTE CBRS</label>
+
+      <br><input type="checkbox" id="5200_LTE_LAA_B46" >
+      <label for="5200_LTE_LAA_B46">5200 LTE LAA B46</label>
+
+      <br><input type="checkbox" id="700_NR_n12_n29" >
+      <label for="700_NR_n12_n29">700 NR n12/n29</label>
+
+      <br><input type="checkbox" id="3700_NR_C_Band_N77" >
+      <label for="3700_NR_C_Band_N77">3700 NR C-Band N77</label>
+
+      <br><input type="checkbox" id="24GHz_NR_n258" >
+      <label for="24GHz_NR_n258">24GHz NR n258</label>
+
+      <br><input type="checkbox" id="39GHz_NR_n260" >
+      <label for="39GHz_NR_n260">39GHz NR n260</label>
+    </div>
+  </div>
+
+  <div class = 'question_card'>
+    <div class = 'question_title'>
+    T-mobile technologies and frequencies tested
+    </div>
+    <div class = 'question_answer' id="t_mobile_tech_freq_tested">
+
+      <br><input type="checkbox" id="t_not_walking" >
+      <label for="t_not_walking">NOT WALKING</label> 
+
+      <br><input type="checkbox" id="t_unlocked_ue" >
+      <label for="t_unlocked_ue">UNLOCKED UE</label>
+
+      <br><input type="checkbox" id="t_1900_CDMA" >
+      <label for="t_1900_CDMA">1900 CDMA (Legacy Sprint)</label>
+
+      <br><input type="checkbox" id="t_1900_EVDO" >
+      <label for="t_1900_EVDO">1900 EVDO (Legacy Sprint)</label>
+
+      <br><input type="checkbox" id="t_1900_UMTS" >
+      <label for="t_1900_UMTS">1900 UMTS</label>
+
+      <br><input type="checkbox" id="t_2100_UMTS" >
+      <label for="t_2100_UMTS">2100 UMTS</label>
+
+      <br><input type="checkbox" id="t_600_LTE" >
+      <label for="t_600_LTE">600 LTE</label>
+
+      <br><input type="checkbox" id="t_700_LTE" >
+      <label for="t_700_LTE">700 LTE</label>
+
+      <br><input type="checkbox" id="1900_LTE_B2_B25" >
+      <label for="1900_LTE_B2_B25">1900 LTE B2 or B25</label>
+
+      <br><input type="checkbox" id="t_2100_LTE" >
+      <label for="t_2100_LTE">2100 LTE</label>
+
+      <br><input type="checkbox" id="t_2500_LTE" >
+      <label for="t_2500_LTE">2500 LTE</label>
+
+      <br><input type="checkbox" id="t_3600_LTE_CBRS" >
+      <label for="t_3600_LTE_CBRS">3600 LTE CBRS</label>
+
+      <br><input type="checkbox" id="t_5200_LTE_LAA_B46" >
+      <label for="t_5200_LTE_LAA_B46">5200 LTE LAA B46</label>
+
+      <br><input type="checkbox" id="t_600_NR_n71" >
+      <label for="t_600_NR_n71">600 NR n71</label>
+
+      <br><input type="checkbox" id="t_700_NR_n12_n29" >
+      <label for="t_700_NR_n12_n29">700 NR n12/n29</label>
+
+      <br><input type="checkbox" id="t_2500_NR_n41" >
+      <label for="t_2500_NR_n41">2500 NR n41</label>
+
+      <br><input type="checkbox" id="t_3700_NR_C_Band_N77" >
+      <label for="t_3700_NR_C_Band_N77">3700 NR C-Band N77</label>
+
+      <br><input type="checkbox" id="t_24GHz_NR_n258" >
+      <label for="t_24GHz_NR_n258">24GHz NR n258</label>
+
+      <br><input type="checkbox" id="t_28GHz_NR_n261" >
+      <label for="t_28GHz_NR_n261">28GHz NR n261</label>
+
+      <br><input type="checkbox" id="t_39GHz_NR_n260" >
+      <label for="t_39GHz_NR_n260">39GHz NR n260</label>
+    </div>
+  </div>
+
+  <div class = 'question_card'>
+    <div class = 'question_title'>
+    US Cellular technologies and frequencies tested
+    </div>
+    <div class = 'question_answer' id="us_cellular_tech_freq_tested">
+
+      <br><input type="checkbox" id="u_not_walking" >
+      <label for="u_not_walking">NOT WALKING</label> 
+
+      <br><input type="checkbox" id="u_unlocked_ue" >
+      <label for="u_unlocked_ue">UNLOCKED UE</label>
+
+      <br><input type="checkbox" id="u_850_CDMA" >
+      <label for="u_850_CDMA">850 CDMA</label>
+
+      <br><input type="checkbox" id="u_1900_CDMA" >
+      <label for="u_1900_CDMA">1900 CDMA</label>
+
+      <br><input type="checkbox" id="u_600_LTE" >
+      <label for="u_600_LTE">600 LTE</label>
+
+      <br><input type="checkbox" id="u_700_LTE" >
+      <label for="u_700_LTE">700 LTE</label>
+
+      <br><input type="checkbox" id="u_850_LTE" >
+      <label for="u_850_LTE">850 LTE</label>
+
+      <br><input type="checkbox" id="u_1900_LTE" >
+      <label for="u_1900_LTE">1900 LTE</label>
+
+      <br><input type="checkbox" id="u_2100_LTE" >
+      <label for="u_2100_LTE">2100 LTE</label>
+
+      <br><input type="checkbox" id="u_3600_LTE_CBRS" >
+      <label for="u_3600_LTE_CBRS">3600 LTE CBRS</label>
+
+      <br><input type="checkbox" id="u_600_NR_n71" >
+      <label for="u_600_NR_n71">600 NR n71</label>
+
+      <br><input type="checkbox" id="u_700_NR_n12_n29" >
+      <label for="u_700_NR_n12_n29">700 NR n12/n29</label>
+
+      <br><input type="checkbox" id="u_3700_NR_C_Band_N77" >
+      <label for="u_3700_NR_C_Band_N77">3700 NR C-Band N77</label>
+
+      <br><input type="checkbox" id="u_24GHz_NR_n258" >
+      <label for="u_24GHz_NR_n258">24GHz NR n258</label>
+
+      <br><input type="checkbox" id="u_28GHz_NR_n261" >
+      <label for="u_28GHz_NR_n261">28GHz NR n261</label>
+
+      <br><input type="checkbox" id="u_39GHz_NR_n260" >
+      <label for="u_39GHz_NR_n260">39GHz NR n260</label>
+    </div>
+  </div>
+
+  <div class = 'question_card'>
+    <div class = 'question_title'>
+    Verizon technologies and frequencies tested
+    </div>
+    <div class = 'question_answer' id="verizon_tech_freq_tested">
+
+      <br><input type="checkbox" id="v_not_walking" >
+      <label for="v_not_walking">NOT WALKING</label> 
+
+      <br><input type="checkbox" id="v_unlocked_ue" >
+      <label for="v_unlocked_ue">UNLOCKED UE</label>
+
+      <br><input type="checkbox" id="v_850_CDMA" >
+      <label for="v_850_CDMA">850 CDMA</label>
+
+      <br><input type="checkbox" id="v_1900_CDMA" >
+      <label for="v_1900_CDMA">1900 CDMA</label>
+
+      <br><input type="checkbox" id="v_700_LTE" >
+      <label for="v_700_LTE">700 LTE</label>
+
+      <br><input type="checkbox" id="v_850_LTE" >
+      <label for="v_850_LTE">850 LTE</label>
+
+      <br><input type="checkbox" id="v_1900_LTE" >
+      <label for="v_1900_LTE">1900 LTE</label>
+
+      <br><input type="checkbox" id="v_2100_LTE" >
+      <label for="v_2100_LTE">2100 LTE</label>
+
+      <br><input type="checkbox" id="v_3600_LTE_CBRS" >
+      <label for="v_3600_LTE_CBRS">3600 LTE CBRS</label>
+
+      <br><input type="checkbox" id="v_5200_LTE_LAA_B46" >
+      <label for="v_5200_LTE_LAA_B46">5200 LTE LAA B46</label>
+
+      <br><input type="checkbox" id="v_850_NR_n5" >
+      <label for="v_850_NR_n5">850 NR n5</label>
+
+      <br><input type="checkbox" id="v_3700_NR_C_Band_N77" >
+      <label for="v_3700_NR_C_Band_N77">3700 NR C-Band N77</label>
+
+      <br><input type="checkbox" id="v_28GHz_NR_n261" >
+      <label for="v_28GHz_NR_n261">28GHz NR n261</label>
+
+      <br><input type="checkbox" id="v_39GHz_NR_n260" >
+      <label for="v_39GHz_NR_n260">39GHz NR n260</label>
+    </div>
+  </div>
+
+  <div class = 'question_card'>
+    <div class = 'question_title'>
+    Public Safety frequencies tested
+    </div>
+    <div class = 'question_answer' id="public_safety_freq_tested">
+
+      <br><input type="checkbox" id="p_not_walking" >
+      <label for="p_not_walking">NOT WALKING</label> 
+
+      <br><input type="checkbox" id="p_700_PS" >
+      <label for="p_700_PS">700 PS</label>
+
+      <br><input type="checkbox" id="p_700_FirstNet" >
+      <label for="p_700_FirstNet">700 FirstNet</label>
+
+      <br><input type="checkbox" id="p_800_PS" >
+      <label for="p_800_PS">800 PS</label>
+
+      <br><input type="checkbox" id="p_UHF" >
+      <label for="p_UHF">UHF</label>
+
+      <br><input type="checkbox" id="p_VHF" >
+      <label for="p_VHF">VHF</label>
+    </div>
+  </div>
+
+  <div class = 'question_card'>
+    <div class = 'question_title bolded' >
+    Where are the files located?
+    </div>
+    <div class = 'question_answer'>
+
+      <br><input type="radio" id="carrier_google_drive" name="wind_public_safety_file_location" >
+      <label for="carrier_google_drive">Google Drive</label>
+
+      <br><input type="radio"  id="carrier_email" name="wind_public_safety_file_location" >  
+      <label for="carrier_email">Email (Last Resort)</label> 
+
+    </div>
+  </div>
+</div>
+
+<h2 class = 'form_sub_header'>Data Submission Summary</h2>
+
+    <div class = 'question_card'>
+      <div class = 'question_title'>
+        Data location for all files
+        <br> If you uploaded to Google Drive please attach the link. Email is a last resort for submission.
+      </div>
+      <div class = 'question_answer'>
+
+        <br><input type="checkbox" id="data_location_all_files">
+        <label for = 'data_location_all_files'>Google Drive </label>
+      </div>
+    </div>
+
+    <div class = 'question_card'>
+      <div class = 'question_title bolded' >
+      Naming (Examples only)
+      </div>
+      <div class = 'question_answer'>
+      
+        <br><li>OTDR - "Project Name_End1-End2_Cable Number_Strand Number_Wavelength_Date"</li>
+
+        <br><li>OTDR - "Eli Lilly_FBDA23-HE_C001_004_S13_1-9-16"</li>
+
+        <br><li>PIM - "Project Name_Carrier_Frequency_Test Location_Date"</li>
+
+        <br><li>PIM - "USPS_Verizon_1900MHz_Tx1 Alpha Sector_6-1-17"</li>
+
+        <br><li>Scope - "Project Name_End_Cable Number_Strand Number_Date"</li>
+
+        <br><li>Scope - "Eli Lilly_FBDA13_C001_006_6-9-18"</li>
+
+        <br><li>Sweep - "Project Name_Carrier_Frequency_Sweep Type_Sweep Location_Date"</li>
+
+        <br><li>Sweep - "Delta_Verizon_700MHz_Return Loss_Level 5 West_6-20-17"</li>
+
+        <br><li>WINd - "Project Name_Carrier_Building_Floor_Frequency_Technology_Date / Revision #"</li>
+
+        <br><li>WINd - "Eli Lilly_ ATT_ Bldg 55_ Floor 3_ 700MHz_ LTE_ 5-22-17_ Rev 2"</li>
+
+      </div>
+    </div>
+
+    <div class = 'question_card'>
+    <div class = 'question_title bolded' >
+    Are all tests submitted labeled correctly? Examples above.
+      </div>
+      <div class = 'question_answer'>
+      
+        <br><input type="radio" id="correct_label_yes" name="tests_submitted_labeled_correctly"> 
+        <label for="correct_label_yes">Yes</label>
+
+        <br><input type="radio" id="correct_label_no" name="tests_submitted_labeled_correctly">
+        <label for="correct_label_no">No</label>
+
+      </div>
+    </div>
+    
+    <div class = 'question_card'>
+      <div class = 'question_title'>
+      If no, name explanation... (if yes, type N/A)
+      </div>
+      <div class = 'question_answer'>
+        <br><input type = 'text' class = 'question_input' id="name_not_labeled">
+      </div>
+    </div>
+
+    <div class = 'question_card'>
+      <div class = 'question_title'>
+      What is the Google Drive file path(s) if uploaded there/What is the path that results need to be uploaded?
+      </div>
+      <div class = 'question_answer'>
+        <br><input type = 'text' class = 'question_input' id="file_path">
+      </div>
+    </div>
+
+  <div class = 'question_card'>
+    <div class = 'question_title bolded' >
+    Priority
+    </div>
+    <div class = 'question_answer'>
+    
+      <br><input type="radio" id="zero" name="priority">
+      <label for="zero">0 - Just notifying the team - no data yet</label>
+
+      <br><input type="radio" id="one" name="priority">
+      <label for="one">1 - Off site and not returning, please review when able</label>
+
+      <br><input type="radio" id="two" name="priority">
+      <label for="two">2 - Off site and returning tomorrow, review for any adjustments needed tomorrow</label>
+
+      <br><input type="radio" id="three" name="priority">
+      <label for="three">3 - Before end of day, want to make sure data is good before I leave the site</label>
+
+      <br><input type="radio" id="four" name="priority">
+      <label for="four">4 - Still on site but have other activities, review as soon as possible for any adjustments</label>
+
+      <br><input type="radio" id="five" name="priority">
+      <label for="five">5 - Need back immediately</label>
+
+    </div>
+  </div>
+
+  <button class = 'form_large_button' id = 'submit_fse_support_button' onclick = 'fse_remote_support_request()'>Submit</button>
+
+</div>
